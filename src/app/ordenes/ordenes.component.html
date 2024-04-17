@@ -1,0 +1,88 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2"><i class='nav-icon fa fa-cart-arrow-down'></i>Pedidos</h1>
+    <div class="col text-end">
+      <button type="button" class="btn btn-dark" (click)=" insertar()">Nuevo Pedido</button>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <div class="row mt-3">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No.Pedido</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Total</th>
+              <th scope="col">Vendedor</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of ventas">
+              <td style="color: black; font-weight: bold;">{{item.id_venta}}</td>
+              <td>{{item.fecha}}</td>
+              <td>{{item.fo_cliente}}</td>
+              <td>
+              <input type="button" class="btn btn-outline-dark btn-sm" value="Ver Productos"
+              data-bs-toggle="modal" data-bs-target="#verproductos" (click)="mostrar_modal(1,item.id_venta)">
+              </td>
+              <td>{{item.total | currency}}</td>
+              <td>{{item.fo_vendedor}}</td>
+              <td>
+                <input type="button" class="btn btn-outline-danger btn-sm" value="Eliminar" (click)
+                ="eliminar(item.id_venta)">
+              </td>
+            </tr>
+            <!-- Agregar más filas según sea necesario -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!--Modal-->
+<!-- Modal -->
+<div class="modal fade" id="verproductos" *ngIf="modal==true" tabindex="-1" aria-labelledby="exampleModalLabel"  aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Productos del Pedido</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Valor Unidad</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+          </tr>
+          <tr *ngFor="let itemp of productos">
+          <td>{{itemp[0]}}</td>
+          <td>{{itemp[1]}}</td>
+          <td>{{itemp[2] | currency}}</td>
+          <td>{{itemp[3]}}</td>
+          <td>{{itemp[4] | currency}}</td>
+          </tr>
+          <tr>
+            <td colspan="3"></td>
+            <td><b>TOTAL:</b></td>
+            <td>{{total | currency}}</td>
+          </tr>
+          
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,91 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2"><i class="nav-icon fa fa-home fa-fw" aria-hidden="true"></i>Dashboard 
+    </h1>
+    
+  </div>
+  <style>
+    .login-container {
+      background-image: url('../../assets/img/background.png'); /* Cambiar 'ruta_de_la_imagen.jpg' por la ruta de tu imagen de fondo */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 100vh;
+    }
+  </style>
+
+
+  <section class="content">
+    <div class="container-fluid" >
+      <div class="row" >
+        <div class="login-container">
+       
+      
+        <div class="col-lg-3 col-6">
+
+          <!-- small box -->
+          <div class="small-box bg-secondary">
+            <div class="inner">
+              <h3><br></h3>
+              <h5>PEDIDOS</h5>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" [routerLink]="['/ordenes']" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-secondary">
+            <div class="inner">
+              <h3><br></h3>
+
+              <h5>PRODUCTOS</h5>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" [routerLink]="['/productos']" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-secondary">
+            <div class="inner">
+              <h3><br></h3>
+
+              <h5>CLIENTES</h5>
+            </div>
+            <div class="icon">
+              <i class="  ion ion-person-add"></i>
+            </div>
+            <a href="#" [routerLink]="['/clientes']" class="small-box-footer">  Más info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-secondary">
+            <div class="inner">
+              <h3> <br> </h3>
+              <h5>PROVEEDORES</h5>
+            </div>
+            <div class="icon">
+              <i class="nav-icon fa fa-address-book"></i>
+            </div>
+            <a href="#" [routerLink]="['/proveedor']" class="small-box-footer">Más info  <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+    </div>
+  </div>
+  </section>
+
+  
+</main>

@@ -1,0 +1,51 @@
+<style>
+    .login-container {
+      background-image: url('../../assets/img/fondoss.jpg'); /* Cambiar 'ruta_de_la_imagen.jpg' por la ruta de tu imagen de fondo */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .login-box {
+      background-color: #f3efef; /* Color del fondo del rectángulo sin transparencia    /* 
+      border-radius: 10px; /* Ajusta el radio del borde según tu preferencia */
+      padding: 20px;
+      max-width: 400px; /* Ajusta el ancho máximo del rectángulo según tu preferencia */
+      width: 100%;
+    }
+  </style>
+
+<div class="login-container">
+    <div class="login-box">
+      <main class="form-signin">
+        <div id="form">
+          <img class="mb-4" src="../../assets/img/Logo.png" alt="" width="360" height="auto">
+          <h1 class="h3 mb-3 fw-normal">Por favor incia sesión</h1>
+          <div class="form-floating">
+            <input type="email" id="username" placeholder="Username" class="form-control" [(ngModel)]="username">
+            <label for="floatingInput">Username</label>
+          </div>
+          <br>
+          <div class="form-floating">
+            <input type="password" id="clave" placeholder="Contraseña" class="form-control" [(ngModel)]="clave">
+            <label for="floatingPassword">Contraseña</label>
+          </div>
+          <br>       
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Recuérdame
+            </label>
+          </div>
+          <div class="col-12" *ngIf="error==true">
+            <span style="color: #ff557f;">Usuario o Contraseña Incorrecta</span>
+        </div>
+
+          <input type="button" value="Ingresar" class="w-100 btn btn-lg btn-dark" value="Iniciar Sesión" (click)="consulta('')">
+          <p class="mt-5 mb-3 text-muted">&copy; 2024</p>
+        </div>
+      </main>
+    </div>
+  </div>
